@@ -1,0 +1,14 @@
+<h2>My tasks</h2>
+<ul class="tasks">
+	<li *ngFor="let task of tasks">
+		<a routerLink="/todo/{{task._id}}">
+			{{task.name}}
+		</a>
+	</li>
+</ul>
+<div>
+	<label>task:
+		<input [(ngModel)]="task.name" placeholder="name" (keyup.enter)="createTask()">
+	</label>
+</div>
+<button (click)="createTask()">Add Task</button>
