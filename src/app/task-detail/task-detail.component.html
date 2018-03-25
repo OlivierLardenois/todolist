@@ -1,12 +1,27 @@
 
-<div *ngIf="task">
-	<h2>{{ task.name }}</h2>
-	<div>
-		<label>task:
-			<input [(ngModel)]="task.name" placeholder="name">
-		</label>
+<div class="container-fluid">
+	<div *ngIf="task">
+		<div class="row">
+			<div class="col-xs-12">
+				<h2>{{ task.name }}</h2>
+			</div>
+		</div>
+		<div class="form-group row">
+		  	<label for="task" class="col-sm-2 col-md-1" style="padding-top:7px">Task :</label>
+			<div class="col-sm-5">
+				<input [(ngModel)]="task.name" class="form-control" id="task" placeholder="Task name">
+		  	</div>
+		  	<div class="col-sm-2 form-group">
+				<button (click)="saveTask()" class="btn btn-primary">Save</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<button *ngIf="!task.isDone" (click)="completeTask()" class="btn btn-success">Done</button>
+				<button *ngIf="task.isDone" (click)="completeTask()" class="btn btn-success">Undone</button>
+				<button (click)="goBack()" class="btn btn-secondary">Back</button>
+				<button (click)="deleteTask()" class="btn btn-danger">Delete</button>
+			</div>
+		</div>
 	</div>
-	<button (click)="saveTask()">Save</button>
-	<button (click)="deleteTask()">Done</button>
-	<button (click)="goBack()">Back</button>
 </div>

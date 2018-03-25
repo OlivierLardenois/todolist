@@ -1,14 +1,23 @@
-<h2>My tasks</h2>
-<ul class="tasks">
-	<li *ngFor="let task of tasks">
-		<a routerLink="/todo/{{task._id}}">
-			{{task.name}}
-		</a>
-	</li>
-</ul>
-<div>
-	<label>task:
-		<input [(ngModel)]="task.name" placeholder="name" (keyup.enter)="createTask()">
-	</label>
+<div class="container-fluid">
+	<div class="row col-sm-12">
+		<h2>Todolist</h2>
+	</div>
+	<div class="row">
+		<ul class="tasks">
+			<li *ngFor="let task of tasks">
+				<div class="row col-sm-12">
+					<a routerLink="/todo/{{task._id}}" [class.isDone]="task.isDone">
+						{{task.name}}
+					</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="row" style="margin-top:10px">
+		<label for="task" class="col-sm-2 col-md-1" style="padding-top:7px">Task :</label>
+		<div class="col-sm-5">
+			<input [(ngModel)]="task.name" class="form-control" id="task" placeholder="New task" (keyup.enter)="createTask()">
+		</div>
+	</div>
+	<button (click)="createTask()" class="btn btn-primary">Add Task</button>
 </div>
-<button (click)="createTask()">Add Task</button>

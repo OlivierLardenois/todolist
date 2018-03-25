@@ -27,7 +27,7 @@ export class TaskService {
 
 	saveTask(task: Task): Observable<any> {
 		const url = `${this.todolistUrl}/${task._id}`;
-		return this.http.put<any>(url, {"name": task.name}, httpOptions)
+		return this.http.put<any>(url, task, httpOptions)
 	}
 
 	createTask(task: Task): Observable<any> {

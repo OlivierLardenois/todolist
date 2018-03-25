@@ -38,6 +38,12 @@ export class TaskDetailComponent implements OnInit {
 			.subscribe(() => this.router.navigate(['']))
 	}
 
+	completeTask(): void {
+		let savedTask = Object.assign({},this.task, {isDone: !this.task.isDone});
+		this.taskService.saveTask(savedTask)
+			.subscribe(() => this.router.navigate(['']))
+	}
+
 	goBack(): void {
 		this.router.navigate([''])
 	}
