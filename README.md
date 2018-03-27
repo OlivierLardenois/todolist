@@ -2,10 +2,29 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
-## How to use
+## Prerequisites
 
-Run mongoDB `sudo service mongod start`.
+* [MongoDB](https://docs.mongodb.com/manual/installation/)
+* [Nodejs](https://nodejs.org)
+* [Angluar CLI](https://github.com/angular/angular-cli)
 
-Start the API from api folder : `npm start`.
+## Installation
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
+Run mongoDB :
+- `sudo service mongod start` on Linux.
+- `mongod.exe` on Windows.
+
+Start the API from api folder :
+- `npm start`
+
+Get & Run [http-server](https://github.com/indexzero/http-server) :
+- `npm install -g http-server`
+- `http-server -p 4200 -c-1 ./dist`
+
+Navigate to `http://localhost:4200/`
+
+
+## Test
+
+Install [Mocha](https://github.com/mochajs/mocha) :
+- `npm install -g mocha`

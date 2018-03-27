@@ -31,6 +31,10 @@ module.exports = function(server) {
 
     // Create one task
     server.post('/todo', (req, res, next) => {
+        if (!req.body.name) {
+            res.send(400);
+            return next();
+        }
         var task = new Todo(req.body)
         task.isDone = false;
         task.save((err, task) => {
@@ -42,20 +46,6 @@ module.exports = function(server) {
             console.log("Task created :", task);
             res.send(201);
         })
-        next()
-    });
-
-    // Complete one task
-    server.post('/todo/done/:id', (req, res, next) => {
-        Todo.update({ _id: req.params.id }, { isDone: true }, err => {
-            if (err) {
-                console.error(err);
-                res.send(400);
-                return;
-            }
-            console.log("Task done");
-            res.send(200);
-        });
         next()
     });
 

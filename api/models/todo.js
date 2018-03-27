@@ -5,6 +5,4 @@ var todoSchema = mongoose.Schema({
     isDone: Boolean
 });
 
-var Todo = mongoose.model('Todo', todoSchema)
-
-module.exports = Todo;
+module.exports = mongoose.model('Todo', todoSchema);
