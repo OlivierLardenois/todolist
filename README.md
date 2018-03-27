@@ -10,6 +10,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Installation
 
+Build angular app from todolist dir : 
+- `ng build`
+
 Run mongoDB :
 - `sudo service mongod start` on Linux.
 - `mongod.exe` on Windows.
@@ -23,8 +26,13 @@ Get & Run [http-server](https://github.com/indexzero/http-server) :
 
 Navigate to `http://localhost:4200/`
 
-
 ## Test
 
 Install [Mocha](https://github.com/mochajs/mocha) :
 - `npm install -g mocha`
+
+Run API in test mode :
+- `npm test`
+
+Then run mocha in another prompt from api dir :
+- `mocha`

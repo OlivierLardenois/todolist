@@ -1,6 +1,6 @@
+var corsMiddleware = require('restify-cors-middleware');
+var mongoose = require('mongoose');
 var restify = require("restify");
-var mongoose = require('mongoose')
-const corsMiddleware = require('restify-cors-middleware');
 
 var server = restify.createServer();
 
@@ -13,7 +13,9 @@ server.pre(cors.preflight);
 server.use(cors.actual);
 
 server.listen(8080, function () {
-    mongoose.connect("mongodb://localhost/api");
+    let mongoURL = ((process.env.NODE_ENV == "test") ? "mongodb://localhost/api" : "mongodb://localhost/test");
+    mongoose.connect(mongoURL);
+
     var db = mongoose.connection;
 
     db.on('error', console.error.bind(console, 'connection error:'));

@@ -9,10 +9,9 @@ module.exports = function(server) {
                 res.send(400);
                 return;
             }
-            console.log("Todo :", todo);
             res.send(200, todo);
         });
-        next()
+        next();
     });
 
     // Get one task
@@ -23,10 +22,9 @@ module.exports = function(server) {
                 res.send(400);
                 return;
             }
-            console.log("Todo :", todo);
             res.send(200, todo);
         });
-        next()
+        next();
     });
 
     // Create one task
@@ -43,10 +41,9 @@ module.exports = function(server) {
                 res.send(400);
                 return;
             }
-            console.log("Task created :", task);
             res.send(201);
         })
-        next()
+        next();
     });
 
     // Modifie one task
@@ -57,10 +54,9 @@ module.exports = function(server) {
                 res.send(400);
                 return;
             }
-            console.log("Task updated");
             res.send(200);
         });
-        next()
+        next();
     });
     
     // Delete one task
@@ -71,9 +67,8 @@ module.exports = function(server) {
                 res.send(400);
                 return;
             }
-            console.log("Task deleted");
             res.send(200);
         });
-        next()
+        next();
     });
 };

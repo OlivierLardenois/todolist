@@ -25,7 +25,7 @@ export class TodolistComponent implements OnInit {
 
 	getTasks(): void {
 		this.taskService.getTasks()
-			.subscribe(tasks => this.tasks = tasks.reverse());
+			.subscribe(tasks => this.tasks = tasks);
 	}
 
 	createTask(): void {
